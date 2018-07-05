@@ -1,4 +1,4 @@
-package com.transunion.lfe.ui
+package com.training.survey
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
