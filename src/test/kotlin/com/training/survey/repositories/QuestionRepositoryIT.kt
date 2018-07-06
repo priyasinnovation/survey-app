@@ -25,7 +25,7 @@ import kotlin.test.assertTrue
     "amazon.dynamodb.endpoint=http://localhost:8000/",
     "amazon.aws.accesskey=yourAccessKey",
     "amazon.aws.secretkey=yourSecretKey" ])
-class QuestionRepositoryIntegrationTest {
+class QuestionRepositoryIT {
 
     lateinit var dynamoDBMapper : DynamoDBMapper
 
@@ -51,7 +51,7 @@ class QuestionRepositoryIntegrationTest {
     }
 
     @Test
-    fun `save then retrive all to the question table`(){
+    fun `save then retrieve all to the question table`(){
         val question = Question("1","Fun times")
         questionService.save(question)
 
@@ -63,7 +63,7 @@ class QuestionRepositoryIntegrationTest {
     }
 
     @Test
-    fun `save then retrive one from the question table`(){
+    fun `save then retrieve one from the question table`(){
         val question = Question("1","Fun times")
         questionService.save(question)
 

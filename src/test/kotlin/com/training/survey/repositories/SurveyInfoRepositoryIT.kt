@@ -27,7 +27,7 @@ import kotlin.test.assertTrue
 "amazon.dynamodb.endpoint=http://localhost:8000/",
 "amazon.aws.accesskey=yourAccessKey",
 "amazon.aws.secretkey=yourSecretKey" ])
-class SurveyInfoRepositoryIntegrationTest {
+class SurveyInfoRepositoryIT {
 
     lateinit var dynamoDBMapper : DynamoDBMapper
 
