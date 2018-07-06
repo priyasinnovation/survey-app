@@ -68,9 +68,9 @@ class QuestionServiceTest{
         Mockito.`when`(questionRepository.findById("123")).thenReturn(Optional.of(question))
         val questionResponse = questionService.getQuestion("123")
         assertNotNull(questionResponse)
-        assertEquals("123",questionResponse.id)
+        assertEquals("123",questionResponse!!.id)
         assertNotNull(questionResponse)
-        assertEquals("It's fun",questionResponse.name)
+        assertEquals("It's fun",questionResponse!!.name)
     }
 
 }

@@ -1,3 +1,3 @@
 package com.training.survey.bo
 
-data class Question(val id: String, val name: String)
+data class Question @JvmOverloads constructor(var id: String = "", var name: String = "")

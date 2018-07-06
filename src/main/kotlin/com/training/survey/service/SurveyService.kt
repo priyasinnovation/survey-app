@@ -46,8 +46,9 @@ class SurveyService {
                 .collect(Collectors.toList())
                 .groupBy { it.question }
                 .entries.stream()
+                .filter { entry -> questionService.getQuestion(entry.key)!=null }
                 .map { entryResponse ->
-                    QuestionAggregate(questionService.getQuestion(entryResponse.key).name,
+                    QuestionAggregate(questionService.getQuestion(entryResponse.key)!!.name,
                             generateStatus(entryResponse.value),
                             generateResponses(entryResponse.value))
                 }

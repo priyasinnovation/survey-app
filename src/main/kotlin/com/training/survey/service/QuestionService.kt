@@ -25,8 +25,14 @@ class QuestionService {
         return questionService.save(questionEntity).id
     }
 
-    fun  getQuestion(id : String): Question {
-        val questionEntity = questionService.findById(id).get()
-        return Question(questionEntity.id,questionEntity.question)
+    fun  getQuestion(id : String): Question? {
+        try {
+            val questionEntity = questionService.findById(id).get()
+            val question = Question(questionEntity.id,questionEntity.question)
+            return question
+        }catch (e : NoSuchElementException){
+            println(e)
+        }
+        return null
     }
 }
