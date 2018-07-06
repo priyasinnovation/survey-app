@@ -48,7 +48,6 @@ class SurveyInfoRepositoryIntegrationTest {
         val surveyInfoTableRequest : CreateTableRequest = dynamoDBMapper.generateCreateTableRequest(SurveyInfo::class.java)
         surveyInfoTableRequest.provisionedThroughput = ProvisionedThroughput(1L,1L)
         amazonDynamoDB.createTable(surveyInfoTableRequest)
-
     }
 
     @After

@@ -5,7 +5,6 @@ import com.training.survey.bo.Status
 import com.training.survey.bo.SurveyAnswer
 import com.training.survey.bo.SurveyResults
 import com.training.survey.repositories.Answer
-import com.training.survey.repositories.QuestionRepository
 import com.training.survey.repositories.SurveyInfo
 import com.training.survey.repositories.SurveyRepository
 import org.springframework.beans.factory.annotation.Autowired
