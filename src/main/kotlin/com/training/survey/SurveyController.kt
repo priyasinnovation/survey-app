@@ -19,6 +19,4 @@ class SurveyController{
     @PostMapping("/survey")
     fun submitResponse(@Valid @RequestBody surveyAnswer: SurveyAnswer) = surveyService.submitResponse(surveyAnswer)
 
-
-
 }

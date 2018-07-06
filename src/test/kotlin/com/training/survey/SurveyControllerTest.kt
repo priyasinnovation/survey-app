@@ -47,7 +47,7 @@ class SurveyControllerTest{
     }
 
     @Test
-    fun `survey answers database id is returned`(){
+    fun `survey id is returned`(){
         val surveyQuestion : SurveyQuestion = SurveyQuestion("Fun", "Red", "it sucks")
         val surveyAnswer : SurveyAnswer = SurveyAnswer(1, mutableListOf(surveyQuestion))
 

@@ -8,4 +8,5 @@ class UiApplication
 
 fun main(args: Array<String>) {
     runApplication<UiApplication>(*args)
+
 }

@@ -33,7 +33,7 @@ class QuestionRepositoryIntegrationTest {
     lateinit var amazonDynamoDB : AmazonDynamoDB
 
     @Autowired
-    lateinit var questionRepository : QuestionRepository
+    lateinit var questionService: QuestionRepository
 
     @Before
     fun setUp(){
@@ -53,9 +53,9 @@ class QuestionRepositoryIntegrationTest {
     @Test
     fun `save then retrive all to the question table`(){
         val question = Question("1","Fun times")
-        questionRepository.save(question)
+        questionService.save(question)
 
-        val questions = questionRepository.findAll().toList()
+        val questions = questionService.findAll().toList()
         assertNotNull(questions)
         assertEquals(1,questions.size)
         assertEquals("Fun times",questions[0].question)
@@ -65,9 +65,9 @@ class QuestionRepositoryIntegrationTest {
     @Test
     fun `save then retrive one from the question table`(){
         val question = Question("1","Fun times")
-        questionRepository.save(question)
+        questionService.save(question)
 
-        val questions = questionRepository.findById("1")
+        val questions = questionService.findById("1")
         assertNotNull(questions)
         assertTrue(questions.isPresent)
         assertEquals("Fun times",questions.get().question)

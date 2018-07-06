@@ -103,5 +103,4 @@ class SurveyInfoRepositoryIntegrationTest {
         assertNotNull(surveyResult)
         assertEquals(2,surveyResult.size)
     }
-
 }

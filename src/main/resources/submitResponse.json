@@ -1,0 +1,2 @@
+
+curl -d '{“sprintNumber” :1,“questions” : [{"question" : "123","status" : "Red","response" : "it sucks"}]}' -H "Content-Type: application/json" -X POST http://localhost:8081/survey

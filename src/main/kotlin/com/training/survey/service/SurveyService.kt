@@ -5,6 +5,7 @@ import com.training.survey.bo.Status
 import com.training.survey.bo.SurveyAnswer
 import com.training.survey.bo.SurveyResults
 import com.training.survey.repositories.Answer
+import com.training.survey.repositories.QuestionRepository
 import com.training.survey.repositories.SurveyInfo
 import com.training.survey.repositories.SurveyRepository
 import org.springframework.beans.factory.annotation.Autowired
@@ -18,6 +19,9 @@ class SurveyService {
 
     @Autowired
     lateinit var surveyRepository: SurveyRepository
+
+    @Autowired
+    lateinit var questionService: QuestionService
 
     fun submitResponse(surveyResponse: SurveyAnswer): String? {
 
@@ -44,7 +48,7 @@ class SurveyService {
                 .groupBy { it.question }
                 .entries.stream()
                 .map { entryResponse ->
-                    QuestionAggregate(entryResponse.key,
+                    QuestionAggregate(questionService.getQuestion(entryResponse.key).name,
                             generateStatus(entryResponse.value),
                             generateResponses(entryResponse.value))
                 }
@@ -52,9 +56,7 @@ class SurveyService {
     }
 
     private fun generateResponses(answers: List<Answer>): List<String> {
-
         return answers.parallelStream().map { answer -> answer.response }.collect(Collectors.toList())
-
     }
 
     private fun generateStatus(answers: List<Answer>): Status {

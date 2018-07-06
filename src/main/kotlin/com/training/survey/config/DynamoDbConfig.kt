@@ -13,7 +13,6 @@ open class DynamoDbConfig( @Value("\${amazon.dynamodb.endpoint}") val dynamoDbEn
                       @Value("\${amazon.aws.accesskey}") val amazonAccessKey: String,
                       @Value("\${amazon.aws.secretkey}")val amazonSecretKey: String) {
 
-
     @Bean
     fun amazonDynamoDB() : AmazonDynamoDBClient {
         val amazonDynamoDBClient = AmazonDynamoDBClient(amazonAWSCredentials())
@@ -27,5 +26,6 @@ open class DynamoDbConfig( @Value("\${amazon.dynamodb.endpoint}") val dynamoDbEn
         val basicAWSCredentials = BasicAWSCredentials(amazonAccessKey, amazonSecretKey)
         return basicAWSCredentials
     }
+
 
 }
