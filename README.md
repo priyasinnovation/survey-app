@@ -40,7 +40,7 @@ Create question
  
  Submit SurveyResponse 
  
- `curl -X POST \
+`curl -X POST \
     http://localhost:8081/survey \
     -H 'cache-control: no-cache' \
     -H 'content-type: application/json' \
@@ -52,12 +52,11 @@ Create question
   		{
   			"question" : "1",
   			"status" : "Yellow",
-  			"response" : "I'\''m not learning anything new"
+  			"response" : "This is wrong"
   		}
-  	]
-  	
-  }'`
+  	]  	
+  }`
   
   Get Survey Results for a Sprint 
   
-  curl -X GET "http://localhost:8081/results?sprint=1"
+  `curl -X GET "http://localhost:8081/results?sprint=1"`
