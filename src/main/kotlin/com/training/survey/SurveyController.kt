@@ -10,13 +10,13 @@ import javax.validation.Valid
 class SurveyController{
 
     @Autowired
-    lateinit var surveyService3: SurveyService
+    lateinit var surveyService4: SurveyService
 
     @GetMapping("/results")
-    fun getSurveys(@RequestParam(name = "sprint") sprint : Int) = surveyService3.getResults(sprint)
+    fun getSurveys(@RequestParam(name = "sprint") sprint : Int) = surveyService4.getResults(sprint)
 
 
     @PostMapping("/survey")
-    fun submitResponse(@Valid @RequestBody surveyAnswer: SurveyAnswer) = surveyService3.submitResponse(surveyAnswer)
+    fun submitResponse(@Valid @RequestBody surveyAnswer: SurveyAnswer) = surveyService4.submitResponse(surveyAnswer)
 
 }
